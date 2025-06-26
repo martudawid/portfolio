@@ -1,0 +1,284 @@
+
+:root {
+    --color-fondo: #d2c6c3;
+    --color-texto: #4a4a4a;
+    --color-primario: #a18276; 
+    --color-secundario: #c3a39a; 
+    --color-claro: #ffffff;
+    --font-titulos: 'Lora', serif;
+    --font-cuerpo: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-cuerpo);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.8;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-titulos);
+    color: var(--color-primario);
+    font-weight: 500;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nombre-principal {
+    font-family: var(--font-titulos);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--color-primario);
+}
+
+
+main {
+    padding-top: 120px;
+}
+
+section {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.2rem;
+}
+
+
+.seccion-bienvenida {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.foto-perfil {
+    width: 160px;  
+    height: 160px; 
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.texto-bienvenida h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+.texto-bienvenida p {
+    font-size: 1.1rem;
+    max-width: 400px;
+}
+
+
+
+.sobre-mi-contenido {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.proyecto-card {
+    background: transparent;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+.proyecto-card h3 {
+    margin-top: 0;
+}
+
+
+
+#game-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+.options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.options-container button {
+    width: 100%;
+    padding: 10px;
+    background: var(--color-claro);
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.options-container button:hover {
+    background: var(--color-secundario);
+    color: var(--color-claro);
+}
+#game-feedback {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+
+#todo-app { display: flex; gap: 10px; margin-top: 1rem; }
+#todo-input { flex-grow: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: var(--font-cuerpo); }
+#todo-add { padding: 10px 15px; background: var(--color-primario); color: white; border: none; cursor: pointer; border-radius: 4px; }
+#todo-list { list-style: none; padding: 0; margin-top: 1rem; text-align: left; }
+#todo-list li { background: #f9f9f9; padding: 10px; border-bottom: 1px solid #eee; }
+
+
+#gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.gallery-img { width: 100%; height: 150px; object-fit: cover; cursor: pointer; border-radius: 4px; transition: transform 0.3s; }
+.gallery-img:hover { transform: scale(1.05); }
+
+
+.cv-grid { display: flex; flex-direction: column; gap: 1.5rem; text-align: center; }
+.card-cv p { font-size: 1rem; }
+
+
+
+.formulario-contacto { display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin: auto; }
+.formulario-contacto input, .formulario-contacto textarea { padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: var(--font-cuerpo); }
+.formulario-contacto button { padding: 15px; background: var(--color-primario); color: white; border: none; cursor: pointer; font-size: 1rem; border-radius: 4px; }
+
+
+footer {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+.redes-sociales { margin-bottom: 1rem; }
+.redes-sociales a { color: var(--color-texto); font-size: 1.5rem; margin: 0 1rem; }
+.redes-sociales a:hover { color: var(--color-primario); }
+footer .fa-heart { color: var(--color-secundario); }
+
+
+
+.lightbox-modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+.lightbox-content { margin: auto; display: block; max-width: 80%; max-height: 80%; }
+.lightbox-close { position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; }
+
+
+
+@media (min-width: 768px) {
+    .seccion-bienvenida {
+        flex-wrap: nowrap;
+        text-align: left;
+    }
+    .proyectos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    .cv-grid {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    .card-cv {
+        flex: 1;
+    }
+}
+
+.memory-game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px;
+    max-width: 320px; 
+    margin: 1rem auto;
+    perspective: 1000px;
+}
+
+.memory-card {
+    background-color: transparent;
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    border: 1px solid #c3a39a;
+    border-radius: 8px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.memory-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.memory-card .front-face,
+.memory-card .back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    border-radius: 8px;
+}
+
+.memory-card .front-face {
+    background-color: #fdfaf6;
+    color: var(--color-primario);
+    transform: rotateY(180deg); 
+}
+
+.memory-card .back-face {
+    background-color: #e0e0e0;
+    color: var(--color-claro);
+}
+
+#memory-moves {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-family: var(--font-titulos);
+    color: var(--color-primario);
+}

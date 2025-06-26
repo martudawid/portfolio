@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martina Dawid | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nombre-principal">Portfolio By Martina Dawid</div>
+        <nav>
+            <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
+            <a href="#proyectos" class="nav-link">Proyectos</a>
+            <a href="#habilidades" class="nav-link">CV</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
+            <a href="https://martudawid.github.io/linktree/" target="_blank" rel="noopener noreferrer" class="nav-link">Linktree</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="seccion-bienvenida">
+            <img src="imagenes/imagen.jpg" class="foto-perfil">
+            <div class="texto-bienvenida">
+                <h1>Martina Dawid </h1>
+                <p> Fan del café, viajar y negocios digitales.</p>
+            </div>
+        </section>
+
+        <section id="sobre-mi">
+            <h2>Sobre Mí</h2>
+            <div class="sobre-mi-contenido">
+                <p><strong>Mis Intereses:</strong> Café, GYM, Viajes, Tecnología, Marketing.</p>
+                <p><strong>Mis Objetivos:</strong> Viajar por el mundo, crecer profesionalmente y nunca dejar de aprender.</p>
+            </div>
+        </section>
+
+        <section id="proyectos">
+            <h2>Proyectos Creativos</h2>
+            <div class="proyectos-grid">
+
+                <div class="proyecto-card">
+                    <h3>Juego: Adivina el Destino</h3>
+                    <p> Podés adivinar la ciudad o país viendo solo una foto? </p>
+                    <div id="game-container">
+                        <img id="game-image" src="" alt="Adivina el destino" />
+                        <div id="game-options" class="options-container"></div>
+                        <p id="game-feedback"></p>
+                    </div>
+                </div>
+
+                <div class="proyecto-card">
+                    <h3>Mi Bucket List de Viajes y Cafés</h3>
+                    <p>Una app para anotar mi lista de cafés de especialidad por probar. </p>
+                    <div id="todo-app">
+                        <input type="text" id="todo-input" placeholder="Ej: Cuervo Café - Palermo ">
+                        <button id="todo-add">Añadir</button>
+                        <ul id="todo-list"></ul>
+                    </div>
+                </div>
+
+                <div class="proyecto-card">
+                    <h3>Galería de Viajes</h3>
+                    <p>Una selección de mis lugares favoritos del mundo. Click en una imagen para verla en grande.</p>
+                    <div id="gallery">
+                        <img src="imagenes/viaje1.JPG" alt="Imagen de viaje" class="gallery-img">
+                        <img src="viaje2.jpg" alt="Imagen de viaje" class="gallery-img">
+                        <img src="viaje3.jpg" alt="Imagen de viaje" class="gallery-img">
+                    </div>
+                </div>
+
+                <div class="proyecto-card">
+                    <h3>Juego de Memoria</h3>
+                    <p>Encontrá los pares y ganá</p>
+                    <div class="memory-game-container">
+                        </div>
+                    <p id="memory-moves">Movimientos: 0</p>
+                </div>
+            </div>
+        </section>
+        
+        <div id="lightbox" class="lightbox-modal">
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+
+        <section id="habilidades">
+            <h2>Habilidades y Experiencia</h2>
+            <div class="cv-grid">
+                <div class="card-cv">
+                    <h3>Habilidades Técnicas</h3>
+                    <p>HTML, CSS, JavaScript, Python, Power BI, Excel, SQL, Figma, Powerpoint, Paquete Office.</p>
+                </div>
+                <div class="card-cv">
+                    <h3>Experiencia Laboral</h3>
+                    <p><strong>Pasante de Marketing en <a href="https://www.haleon.com/" target="_blank" rel="noopener noreferrer">Haleon</a></strong> (Actualmente) y <strong>Pasante de Producto en Allianz</strong> (2024).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Formulario de Contacto</h2>
+            <form action="https://formspree.io/f/TU_EMAIL_AQUI" method="POST" class="formulario-contacto">
+                <input type="text" name="name" placeholder="Tu Nombre" required>
+                <input type="email" name="email" placeholder="Tu Email" required>
+                <textarea name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="redes-sociales">
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2025 Martina Dawid. Diseñado con <i class="fas fa-heart"></i>.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
