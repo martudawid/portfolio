@@ -99,24 +99,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const galleryImages = document.querySelectorAll('.gallery-img');
-    const lightboxModal = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.querySelector('.lightbox-close');
+    let slideIndex = 0;
+    showSlides(); // Inicia el slideshow automáticamente
 
-    if (galleryImages.length > 0) {
-        galleryImages.forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxModal.style.display = 'flex';
-                lightboxImg.src = img.src;
-            });
-        });
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      
+      // Si no hay slides, no hacer nada (medida de seguridad)
+      if (slides.length === 0) return;
 
-        const closeModal = () => { lightboxModal.style.display = 'none'; };
-        lightboxClose.addEventListener('click', closeModal);
-        lightboxModal.addEventListener('click', (e) => {
-            if (e.target === lightboxModal) { closeModal(); }
-        });
+      // Ocultar todos los slides
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slideIndex++; // Avanzar al siguiente slide
+
+      // Si llegamos al final, volver al primero
+      if (slideIndex > slides.length) {slideIndex = 1}
+
+      // Quitar la clase "active" de todos los puntos
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      // Mostrar el slide actual y marcar su punto como activo
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      
+      // Llamar a esta misma función después de 3 segundos
+      setTimeout(showSlides, 3000); // Cambia de imagen cada 3 segundos
+    }
     }
 
 
