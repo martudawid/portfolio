@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             image: 'imagenes/viaje1.JPG',
             options: ['Monte Fuji', 'Alpes Suizos', 'Himalaya', 'Patagonia'],
-            answer: 'Patagonia' 
+            answer: 'Patagonia'
         },
         {
             image: 'grecia.jpg',
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             answer: 'Grecia'
         },
         {
-            image: 'imagenes/newyork.jpg', 
+            image: 'imagenes/newyork.jpg',
             options: ['Chicago', 'Los Ángeles', 'Nueva York', 'Toronto'],
             answer: 'Nueva York'
         }
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentQuestionIndex = 0;
 
     function loadQuestion(index) {
-        if (!gameImage) return; 
+        if (!gameImage) return;
         const question = destinations[index];
         gameImage.src = question.image;
         optionsContainer.innerHTML = '';
@@ -53,12 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
             gameFeedback.style.color = '#e74c3c';
         }
     }
-    
-    if(gameContainer) { 
+
+    if(gameContainer) {
         loadQuestion(currentQuestionIndex);
     }
 
-   
+
     const todoInput = document.getElementById('todo-input');
     const todoAddBtn = document.getElementById('todo-add');
     const todoList = document.getElementById('todo-list');
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             todoInput.value = '';
             saveTodos();
         });
-        
+
         todoInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 addTodo(todoInput.value);
@@ -106,38 +106,31 @@ document.addEventListener('DOMContentLoaded', () => {
       let i;
       let slides = document.getElementsByClassName("mySlides");
       let dots = document.getElementsByClassName("dot");
-      
-      // Si no hay slides, no hacer nada (medida de seguridad)
+
       if (slides.length === 0) return;
 
-      // Ocultar todos los slides
       for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
 
-      slideIndex++; // Avanzar al siguiente slide
-
-      // Si llegamos al final, volver al primero
+      slideIndex++;
       if (slideIndex > slides.length) {slideIndex = 1}
 
-      // Quitar la clase "active" de todos los puntos
       for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
       }
 
-      // Mostrar el slide actual y marcar su punto como activo
       slides[slideIndex-1].style.display = "block";
       dots[slideIndex-1].className += " active";
-      
-      // Llamar a esta misma función después de 3 segundos
-      setTimeout(showSlides, 3000); // Cambia de imagen cada 3 segundos
+
+      setTimeout(showSlides, 3000);
     }
-    }
+    // LA LLAVE QUE SOBRABA FUE ELIMINADA DE AQUÍ
 
 
     const gameBoard = document.querySelector('.memory-game-container');
     const movesCounter = document.getElementById('memory-moves');
-    
+
     if (gameBoard) {
         const icons = [
             'fa-plane', 'fa-plane',
@@ -151,14 +144,14 @@ document.addEventListener('DOMContentLoaded', () => {
         let flippedCards = [];
         let matchedPairs = 0;
         let moves = 0;
-        
+
         function shuffle(array) {
             array.sort(() => 0.5 - Math.random());
         }
 
         function createBoard() {
             shuffle(icons);
-            gameBoard.innerHTML = ''; 
+            gameBoard.innerHTML = '';
             icons.forEach(icon => {
                 const card = document.createElement('div');
                 card.classList.add('memory-card');
@@ -189,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
         function checkForMatch() {
             const [card1, card2] = flippedCards;
             if (card1.dataset.icon === card2.dataset.icon) {
-                // Es un match
                 card1.removeEventListener('click', flipCard);
                 card2.removeEventListener('click', flipCard);
                 matchedPairs++;
@@ -198,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 resetTurn();
             } else {
-              
+
                 setTimeout(() => {
                     card1.classList.remove('flipped');
                     card2.classList.remove('flipped');
